@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Station = ({ stopsQueue, departureTime }) => {
+const Station = ({ stopName, departureTime }) => {
   return (
     <div className="station">
       <span className="depart-time">{departureTime}</span>
       <span className="station-icon" />
-      <span className="station-name">{stopsQueue[0]}</span>
+      <span className="station-name">{stopName}</span>
     </div>
   );
 };

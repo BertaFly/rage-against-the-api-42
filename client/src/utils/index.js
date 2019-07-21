@@ -7,7 +7,7 @@ export const debounce = (fn, ms = 0) => {
 };
 
 export const getDestinationStopPoint = route => {
-  return route[route.length - 1].stops[route[route.length - 1].stops.length - 1]
+  return route[route.length - 1].stop.stopPointName
 }
 
 
