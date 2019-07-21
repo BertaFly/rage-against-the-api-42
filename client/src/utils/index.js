@@ -7,10 +7,12 @@ export const debounce = (fn, ms = 0) => {
 };
 
 export const getDestinationStopPoint = route => {
-  return route[route.length - 1].stop.stopPointName
+  return route[route.length - 1].stopPointName
 }
 
 
 export const getMetroLine = lineCode => {
+  console.log('rolineCodeute', lineCode)
+
   return lineCode.split(':')[lineCode.split(':').length - 1]
 }
