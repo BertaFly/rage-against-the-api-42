@@ -387,8 +387,16 @@ app.get('/find-route/:start/:end', (req, res) => {
     res.status(404).send({ error: 'Destination point should differ from start point' });
   }
   const route = getDetails(parsedStopPoints[fromStation].routesToAllStations[toStation])
-
+  const time = new Date(new Date().getTime() + (route.time)*60000);
+  let hours = time.getHours().toString();
+  if (hours.length < 2){
+    hours = "0" + hours;
+  }
+  let minutes = time.getMinutes().toString();
+  if (minutes.length < 2){
+    minutes = "0" + minutes;
+  }
   if (route) {
-    res.send({ data: route, summary: { arrivalAt: `${new Date().getHours()}:${new Date().getMinutes() + route.time}`, totalStations: route.stations.length - 1, totalTransfers: route.numberOfTransfers } });
+    res.send({ data: route, summary: { arrivalAt: `${hours}:${minutes}`, totalStations: route.stations.length - 1, totalTransfers: route.numberOfTransfers } });
   }
 });

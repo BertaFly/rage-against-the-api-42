@@ -18,10 +18,18 @@ const Jorney = ({ route, summary, minutesStart }) => {
           metroLineId = way.lineId;
           const line = getMetroLine(way.lineId);
           const stationCount = route.filter(routeCheck => routeCheck.lineId === metroLineId).length - 1
-
+          const time = new Date(new Date().getTime() + (index * 3)*60000);
+          let hours = time.getHours().toString();
+          if (hours.length < 2){
+            hours = "0" + hours;
+          }
+          let minutes = time.getMinutes().toString();
+          if (minutes.length < 2){
+            minutes = "0" + minutes;
+          }
           return (
             <div key={line}>
-              <Station stopName={way.stopPointName} departureTime={`${new Date().getHours()}:${minutesStart + index * 3}`} />
+              <Station stopName={way.stopPointName} departureTime={`${hours}:${minutes}`} />
               <LineInfo color={`#${way.color}`} line={line} direction={way.direction} stationCount={stationCount} />
             </div>
           )
