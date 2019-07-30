@@ -95,7 +95,6 @@ html {
   margin-right: 10px;
   border: 2px solid #333;
   background-color: white;
-  z-index: 1;
 }
 
 .line-info {
@@ -110,9 +109,10 @@ html {
   content: ' ';
   position: absolute;
   border-left: solid #10a363 6px;
-  top: -10px;
-  bottom: -4px;
+  top: -2px;
+  bottom: -2px;
   left: 0;
+  border-radius: 10px;
 }
 
 .line-info-block {
@@ -135,6 +135,7 @@ html {
   line-height: 16px;
   padding: 0px 4px;
   font-weight: 500;
+  color: #fff;
 }
 
 .line-direction {

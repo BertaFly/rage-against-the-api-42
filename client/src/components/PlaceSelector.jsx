@@ -11,7 +11,9 @@ const PlaceSelector = ({ handleLoadOptions, placeholder = '', handleInputChange,
       fontWeight: state.isSelected ? 500 : 400,
       padding: 10,
       textAlign: 'left',
+      zIndex: 2,
     }},
+    menuList: () => ({zIndex: 2}),
   }
 
   return (
@@ -46,6 +48,7 @@ const PlaceSelector = ({ handleLoadOptions, placeholder = '', handleInputChange,
         styles={customStyles}
         value={{label: selectedValue, value: selectedValue}}
         blurInputOnSelect
+        menuIsOpen
       />
     </>
   )
